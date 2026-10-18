@@ -1,0 +1,127 @@
+/* Custom CSS Variables matching Vitopia green-burgundy */
+:root {
+  --header-font: 'Bodoni Moda', Georgia, serif;
+  --body-font: 'Funnel Display', 'DM Sans', sans-serif;
+  --accent-font: 'Niconne', cursive;
+
+  --header-color: #8A9577;
+  --body-color: #54594a;
+  --accent-color: #666666;
+  --background-color: #eeecdf;
+
+  --button-bg: #8A9577;
+  --button-color: #ffffff;
+  --button-hover-bg: #768165;
+  --button-hover-color: #ffffff;
+
+  --link-color: #842e52;
+  --link-hover-color: #2D3748;
+
+  --border-color: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+
+  --content-padding: 2rem;
+  --section-spacing: 4rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--body-font);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--body-color);
+  overflow-x: hidden;
+}
+
+/* Scroll Animation classes */
+.animate-ready {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.animate-ready[data-animation="fadeIn"] {
+  transform: scale(0.96);
+}
+
+.animate-ready[data-animation="fadeInUp"] {
+  transform: translateY(30px);
+}
+
+.animate-ready[data-animation="fadeInDown"] {
+  transform: translateY(-30px);
+}
+
+.animate-ready[data-animation="fadeInLeft"] {
+  transform: translateX(-30px);
+}
+
+.animate-ready[data-animation="fadeInRight"] {
+  transform: translateX(30px);
+}
+
+.animate-ready[data-animation="zoomIn"] {
+  transform: scale(0.88);
+}
+
+/* When in view */
+.animate-ready.is-animated {
+  opacity: 1 !important;
+  transform: translate(0, 0) scale(1) !important;
+}
+
+/* Vinyl rotation animation */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.vinyl {
+  background-image: url('../images/vinyl.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.vinyl-spinning {
+  animation: spinSlow 12s linear infinite;
+}
+
+.vinyl-paused {
+  animation-play-state: paused;
+}
+
+.play-music {
+  background-color: var(--button-bg) !important;
+  color: #ffffff !important;
+  border-radius: 9999px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2) !important;
+}
+
+.play-music:hover {
+  background-color: var(--button-hover-bg) !important;
+}
+
+/* Lightbox styles */
+#lightbox-modal {
+  transition: opacity 0.25s ease-in-out;
+}
+
+#lightbox-modal.active {
+  display: flex !important;
+}
+
+/* Custom scrollbar for comments */
+#comments-list::-webkit-scrollbar {
+  width: 5px;
+}
+#comments-list::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.05);
+  border-radius: 4px;
+}
+#comments-list::-webkit-scrollbar-thumb {
+  background: var(--button-bg);
+  border-radius: 4px;
+}
