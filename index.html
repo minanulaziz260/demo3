@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Digital Green Burgundy Nuansa Islami - ADAM & HAWA</title>
+  <meta name="description" content="Undangan digital dengan tema Green Burgundy bernuansa Islami yang elegan dan anggun.">
+  <link rel="icon" type="image/png" href="assets/images/vinyl.png">
+
+  <!-- Google Fonts Preconnect & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Funnel+Display:wght@300..800&family=Niconne&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" href="assets/css/resolver.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="font-body bg-[var(--background-color)] text-[var(--body-color)] antialiased select-none selection:bg-[var(--button-bg)] selection:text-white">
+
+  <!-- Floating Audio Music -->
+  <audio id="bg-audio" loop preload="auto">
+    <source src="assets/audio/6oSgxW3SDRqt84xvi80FtOuUUjxXPoZaMsDzbWjv.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Floating Music Toggle Button -->
+  <button id="btnMusic" class="fixed bottom-4 left-4 z-50 transition-all duration-300 ease-in-out cursor-pointer hover:scale-105 active:scale-95 focus:outline-none" title="Elliot James Reay - I Think They Call This Love" aria-label="Toggle Musik">
+    <div class="vinyl size-12 rounded-full shadow-xl bg-[url('assets/images/vinyl.png')] bg-cover bg-center border-2 border-white/70">
+      <span class="sr-only text-xs">Music</span>
+    </div>
+  </button>
+
+  <!-- Floating Navigation Menu -->
+  <div class="fixed right-4 top-4 z-40">
+    <button id="btnMenu" onclick="toggleMenu()" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none border border-input bg-white/90 backdrop-blur-md shadow-md hover:bg-gray-100 h-10 px-4 py-2 rounded-full cursor-pointer text-gray-800" type="button" aria-label="Buka Menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+      <span class="hidden sm:inline font-sans">Menu</span>
+    </button>
+    
+    <div id="menuDropdown" class="hidden absolute right-0 mt-2 w-56 rounded-2xl bg-white/95 backdrop-blur-md shadow-2xl border border-gray-100 p-2 z-50 text-gray-800 animate-in fade-in zoom-in-95 duration-150">
+      <div class="py-1">
+        <a href="#page-0" onclick="closeMenu()" class="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium hover:bg-gray-100 transition-colors">
+          <span>Opening</span>
+        </a>
+        <a href="#page-1" onclick="closeMenu()" class="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium hover:bg-gray-100 transition-colors">
+          <span>Quotes</span>
+        </a>
+        <a href="#page-2" onclick="closeMenu()" class="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium hover:bg-gray-100 transition-colors">
+          <span>Couple</span>
+        </a>
+        <a href="#page-3" onclick="closeMenu()" class="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium hover:bg-gray-100 transition-colors">
+          <span>Save the date</span>
+        </a>
+        <a href="#page-4" onclick="closeMenu()" class="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium hover:bg-gray-100 transition-colors">
+          <span>Love Story</span>
+        </a>
+        <a href="#page-5" onclick="closeMenu()" class="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium hover:bg-gray-100 transition-colors">
+          <span>RSVP</span>
+        </a>
+        <a href="#page-6" onclick="closeMenu()" class="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium hover:bg-gray-100 transition-colors">
+          <span>Gift</span>
+        </a>
+        <a href="#page-7" onclick="closeMenu()" class="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium hover:bg-gray-100 transition-colors">
+          <span>Comment</span>
+        </a>
+        <a href="#page-8" onclick="closeMenu()" class="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium hover:bg-gray-100 transition-colors">
+          <span>Gallery</span>
+        </a>
+        <a href="#page-9" onclick="closeMenu()" class="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium hover:bg-gray-100 transition-colors">
+          <span>Thank You</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Layout: Fixed Cover on Left (Desktop) + Scrollable Sections on Right -->
+  <div class="fixed inset-0 h-full lg:flex text-[var(--body-color)] transition-all duration-200 ease-in-out pointer-events-auto">
+    <!-- Left Pane: Cover Screen -->
+    <div class="relative h-full grow overflow-hidden">
+      <div class="size-full relative">
+<div class="size-full" data-component="image" data-animation="none" id="uid-1257c0b2">
+<img src="assets/images/HYeaalgCGW37Gig0vaScQWY1z1HqpEI8hYoxwTQ5.webp" class="size-full object-cover object-center" alt="YVqFtGeyuPANTnFICZg3l9mes0sJ8c2n7IO5FVVC.jpg">
+</div>
+<div data-animation="hideOnScroll" class="absolute w-full flex flex-col justify-start pb-20 px-6 text-center" style="bottom:50px;color:var(--border-color);">
+
+<div data-component="image" id="uid-650c1f7b" data-animation="zoomIn">
+<img src="assets/images/Bszg35VJjfJUMu2kNU1ukDyoetwGNymR3brTJUb5.webp" class="h-40 w-40 md:h-80 md:w-80 mx-auto mb-4" height="80" alt="YAeVWAELdTgNfJp27jlHmb1WnqA77b4HDIcuyhSD.webp" id="uid-50834c0a">
+</div>
+
+<div data-component="text" class="text-4xl md:text-4xl w-full mb-4 font-accent" data-animation="fadeIn" id="uid-8b8460da">Wedding Invitation</div>
+    <div data-component="text" class="mb-8 text-4xl md:text-6xl w-full font-header" data-animation="fadeIn" id="uid-83a813e8">ADAM &amp; HAWA</div>
+
+<div class="rounded-lg p-3 w-full max-w-80 mx-auto" style="background-color:var(--background-color);color:var(--body-color);">
+ <div data-component="text" data-animation="fadeIn" id="uid-b51cbeed">Kepada Yth.</div>
+<div data-component="recipient" class="font-bold" data-animation="fadeIn" id="uid-efcabf28">Tamu Undangan</div>
+<div data-component="text" data-animation="fadeIn" id="uid-f1591e77">Di Tempat</div>
+</div>
+
+<div data-animation="zoomIn" id="uid-1118c8ab" class="mt-4 max-w-sm mx-auto">
+<a href="#page-0" class="play-music mb-8 btn btn-primary inline-flex h-10 px-6 lg:hidden" rel="noreferrer noopener" id="uid-4fa2178d">Buka Undangan</a>
+</div>
+
+</div>
+</div>
+
+    </div>
+    <!-- Spacer for Desktop Right Pane Alignment -->
+    <div class="h-full w-full max-w-full flex-none lg:max-w-xl pointer-events-none"></div>
+  </div>
+
+  <!-- Right Pane: Scrollable Invitation Sections -->
+  <div id="section-render" class="lg:ml-auto lg:mt-0 lg:max-w-xl rtl:lg:ml-0 rtl:lg:mr-auto relative mt-[100dvh] w-full max-w-full bg-[var(--background-color)] text-[var(--body-color)] shadow-2xl z-20">
+    
+    <!-- Page 0: Opening -->
+    <div id="page-0" class="w-full">
+      <div class="relative overflow-hidden">
+        <div class="relative" style='background-image:url("assets/images/JV3421oTo11WtgMwa6R1b1OYpDQTRqXcDZNNovo5.webp");background-size:cover;background-repeat:no-repeat;background-position:center;'>
+    <img data-animation="fadeInLeft" src="assets/images/kjAnmkzdVRju7PnGYZyznxs3dZ5eO0OF9qooADtT.webp" class="w-full absolute top-0" alt="69c0rfDozhT1TdQx9DyxigdDjsxKwmkqMu1sfcQa.png">
+    <img data-animation="fadeInRight" src="assets/images/PFQM7nFge2RzYg8Jezmi0j3RI4Std6pkfojAmTGi.webp" class="w-full absolute bottom-0" alt="u6WFplC6jcHVbKSi9UyY08l89DoLfw57mxKINkzf.png">
+    <div style="min-height:100vh;" class="flex flex-col justify-center p-6">
+        <div class="text-center text-white">
+            <div data-component="text" class="mb-4" data-animation="zoomIn" id="uid-2d9e46f6">The Wedding Of</div>
+            <div data-component="text" class="font-header text-5xl font-medium" data-animation="fadeInLeft" id="uid-05f98a67">ADAM</div>
+            <div data-component="text" class="text-2xl" data-animation="zoomIn" id="uid-bf3f837e">&amp;</div>
+            <div data-component="text" class="font-header text-5xl font-medium" data-animation="fadeInRight" id="uid-f8e56fe7">HAWA</div>
+            <div data-component="text" class="mt-4" data-animation="fadeInUp" id="uid-badb6c96">11 - 12 - 93</div>
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+    
+    <!-- Page 1: Quotes -->
+    <div id="page-1" class="w-full">
+      <div class="relative overflow-hidden">
+        <section id="uid-c976b055" class="px-4 py-20 space-y-8" style="background-color:var(--header-color);color:var(--background-color);">
+
+<div class="text-center max-w-xl mx-auto lg:px-4">
+      <h2 id="uid-a0e11044" data-component="text" class="font-header text-5xl md:text-7xl font-medium" data-animation="fadeInUp" style="margin-top:0;">YOU'RE INVITED!</h2>
+</div>
+
+<div class="max-w-xl mx-auto p-6 rounded-2xl shadow text-center" style="background-color:rgba(0, 0, 0, 0.08);margin-top:2.5rem;">
+      <p data-component="description" class="text-base mb-3" data-animation="fadeInUp" id="uid-656e798c">"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."</p>
+      <p data-component="description" class="text-base" data-animation="fadeInUp" id="uid-776a0917"> (Ar-Rum: 21)</p>
+</div>
+
+<div>
+<div id="uid-79586f29" class="w-full max-w-xl mx-auto overflow-hidden rounded-xl" data-component="image" style="height:750px;" data-animation="fadeIn">
+      <img src="assets/images/JGNIQG1oHDINqEF3ksHMSnOHSEo1X7l1Oox1jaGl.png" alt="Foto 1" class="w-full h-full object-cover">
+    </div>
+</div>
+
+</section>
+
+      </div>
+    </div>
+    
+    <!-- Page 2: Couple -->
+    <div id="page-2" class="w-full">
+      <div class="relative overflow-hidden">
+        <section class="w-full py-20 px-4">
+    <div class="max-w-xl mx-auto lg:px-4 text-center space-y-8">
+      <div>
+        <h2 id="uid-97aa1f31" data-component="text" class="text-accent font-accent text-5xl md:text-7xl font-medium" data-animation="fadeInUp">Couple</h2>
+        <p data-component="description" class="text-base mt-2" data-animation="fadeInUp" data-animation-duration="2" id="uid-dfc866dd">Dengan memohon ridho serta rahmat Allah Subhanahu Wa Ta’ala, Kami bermaksud mengundang Bapak/Ibu/Saudara(i), untuk menghadiri Resepsi Pernikahan</p>
+      </div>
+
+    <div class="space-y-6">
+      
+  <div class="grid gap-6">
+
+      <div id="uid-2d654f86" data-component="image" class="mx-auto w-40 md:w-64 overflow-hidden h-40 md:h-64 rounded-full" data-animation="fadeInRight"><img src="assets/images/7CkpXpbQ21bCpf1gJ4XzzT9harnbjKX9omRGcqcF.png" class="h-full w-full object-cover object-center" alt="3jPngeBChSREnsqmYDMCXkzWXEC64V7EUltNY8aB.jpg"></div>
+
+      <div class="flex flex-col justify-center p-4 rounded-lg w-full max-w-md mx-auto" style="background-color:var(--header-color);color:var(--background-color);">
+              <h3 data-component="text" class="text-xl sm:text-3xl font-header mb-2" data-animation="zoomIn" id="uid-e20bae67">Rifky Syahrul</h3>
+              <p data-component="text" class="text-base" data-animation="fadeInUp" id="uid-f9ecb5b7">Anak pertama dari 5 bersaudara</p>
+              <p data-component="text" class="text-base" data-animation="fadeInUp" id="uid-e5db251b">Bapak Ir. H. Ibrahim Buka, ST.,MT</p>
+              <p data-component="text" class="text-base" data-animation="fadeInUp" id="uid-7e79de01">&amp; Ibu Hj. Mariani, SE</p>
+            </div>
+  </div>
+
+  <p data-component="text" class="text-6xl font-accent text-accent" data-animation="zoomIn" id="uid-94df584e">dengan</p>
+
+  <div class="grid gap-6">
+
+<div id="uid-31ad8c8b" data-component="image" class="w-40 md:w-64 mx-auto overflow-hidden h-40 md:h-64 rounded-full" data-animation="fadeInLeft"><img src="assets/images/2Yy4tKiYKrSv5qLQbqTCnpQYFV5EM6DsolqaXHTB.png" class="h-full w-full object-cover object-center" alt="3jPngeBChSREnsqmYDMCXkzWXEC64V7EUltNY8aB.jpg"></div>
+
+
+      <div class="flex flex-col justify-center p-4 rounded-lg w-full max-w-md mx-auto" style="background-color:var(--header-color);color:var(--background-color);">
+              <h3 data-component="text" class="text-xl sm:text-3xl font-header mb-2" data-animation="zoomIn" id="uid-46365b17">Eva Nurningsih</h3>
+              <p data-component="text" class="text-base" data-animation="fadeInUp" id="uid-d126e5a9">Anak kedua dari 4 bersaudara</p>
+              <p data-component="text" class="text-base" data-animation="fadeInUp" id="uid-3cae4acf">Bapak Idris</p>
+              <p data-component="text" class="text-base" data-animation="fadeInUp" id="uid-fdaa4f36">&amp; Ibu Sidar</p>
+      </div>
+
+  </div>
+
+  
+  </div>
+</div></section>
+
+      </div>
+    </div>
+    
+    <!-- Page 3: Event -->
+    <div id="page-3" class="w-full">
+      <div class="relative overflow-hidden">
+        <section id="uid-b006efd2" class="relative py-20 px-4" style="background-color:var(--header-color);color:var(--background-color);">
+  <div class="relative h-full w-full mx-auto text-center space-y-8" style="z-index:2;">
+    <div class="max-w-xl mx-auto">
+      <h2 id="uid-bfe5f96b" data-component="text" class="font-accent text-5xl md:text-7xl font-medium" data-animation="fadeInUp">Save the date</h2>
+      <p data-component="description" class="text-base mt-2" id="uid-dda25426" data-animation="fadeInUp">You are invited to attend and be a part of our joyous celebration, which will be held on:
+</p>
+    </div>
+
+    
+        <div data-component="countdown" data-datetime="2025-04-12T08:00:00" class="flex justify-center gap-3 sm:gap-4 text-center my-6">
+          <div class="flex flex-col p-3 sm:p-4 rounded-xl min-w-[65px] sm:min-w-[80px] shadow" style="background-color:var(--background-color);color:var(--header-color);">
+            <span class="days text-2xl sm:text-4xl font-bold font-header">00</span>
+            <span class="text-[10px] sm:text-xs uppercase font-medium mt-1">Hari</span>
+          </div>
+          <div class="flex flex-col p-3 sm:p-4 rounded-xl min-w-[65px] sm:min-w-[80px] shadow" style="background-color:var(--background-color);color:var(--header-color);">
+            <span class="hours text-2xl sm:text-4xl font-bold font-header">00</span>
+            <span class="text-[10px] sm:text-xs uppercase font-medium mt-1">Jam</span>
+          </div>
+          <div class="flex flex-col p-3 sm:p-4 rounded-xl min-w-[65px] sm:min-w-[80px] shadow" style="background-color:var(--background-color);color:var(--header-color);">
+            <span class="minutes text-2xl sm:text-4xl font-bold font-header">00</span>
+            <span class="text-[10px] sm:text-xs uppercase font-medium mt-1">Menit</span>
+          </div>
+          <div class="flex flex-col p-3 sm:p-4 rounded-xl min-w-[65px] sm:min-w-[80px] shadow" style="background-color:var(--background-color);color:var(--header-color);">
+            <span class="seconds text-2xl sm:text-4xl font-bold font-header">00</span>
+            <span class="text-[10px] sm:text-xs uppercase font-medium mt-1">Detik</span>
+          </div>
+        </div>
+        
+<div class="flex flex-wrap justify-center gap-8">
+      
+      <div class="px-6 py-12 w-full max-w-md border" style="border-color:var(--border-color);">
+        <div data-component="image" class="w-32 mx-auto mb-6" data-animation="none" id="uid-528f57c9"><img src="assets/images/Z2CkfqVpZns7bVva8IDlCFsTSLwdqudv71oTtRu6.webp" class="size-full object-contain" alt="6ne3fWhr24TcJq5BF8YkVEaMiWAsWI08ZDSjYSuc.webp"></div>
+        <h3 data-component="text" class="text-3xl sm:text-5xl font-accent mb-2" data-animation="zoomIn" id="uid-97778a11">
+          Akad Nikah
+        </h3>
+        <p data-component="text" class="text-base font-bold text-xl" data-animation="fadeInUp" id="uid-d8ffc789">Sabtu, 12 April 2025</p>
+        <p data-component="text" class="text-base" data-animation="fadeInUp" id="uid-8b46dffc">Pukul 08.00 WIB</p>
+        <p data-component="text" class="text-base" data-animation="fadeInUp" id="uid-e4cc5555">Masjid Al-Ikhlas, Bandung</p>
+        <div data-component="link" data-animation="zoomIn" class="mt-4" id="uid-1926026a">
+          <a href="https://maps.google.com/" target="_blank" class="btn btn-primary h-10 px-6" style="background-color:var(--background-color);color:var(--header-color);" rel="noreferrer noopener">Lokasi Acara</a>
+        </div>
+      </div>
+      
+      <div class="px-6 py-12 w-full max-w-md border" style="border-color:var(--border-color);">
+        <div data-component="image" class="w-32 mx-auto mb-6" data-animation="none" id="uid-1c64e552"><img src="assets/images/WqgePPzSUmFdytFcyfgOOCH4d8lpYzBEMrGk10VI.webp" class="size-full object-contain" style="transform:scaleX(-1)" alt="CBK5ulP5WUJ2IIIWv4VFofews5CF7cf90VSxal8I.webp"></div>
+        <h3 data-component="text" class="text-3xl sm:text-5xl font-accent mb-2" data-animation="zoomIn" id="uid-e25edb38">
+          Resepsi
+        </h3>
+        <p data-component="text" class="text-base font-bold text-xl" data-animation="fadeInUp" id="uid-f7e9f373">Sabtu, 12 April 2025</p>
+        <p data-component="text" class="text-base" data-animation="fadeInUp" id="uid-a0b113c1">Pukul 11.00 - 14.00 WIB</p>
+        <p data-component="text" class="text-base" data-animation="fadeInUp" id="uid-85f9f485">
+          Gedung Serbaguna Cendana, Bandung
+        </p>
+        <div data-component="link" data-animation="zoomIn" class="mt-4" id="uid-79f6fad9">
+          <a href="https://maps.google.com/" target="_blank" class="btn btn-primary h-10 px-6" style="background-color:var(--background-color);color:var(--header-color);" rel="noreferrer noopener">Lokasi Acara</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      </div>
+    </div>
+    
+    <!-- Page 4: Love Story -->
+    <div id="page-4" class="w-full">
+      <div class="relative overflow-hidden">
+        <section id="uid-d395d399" class="px-4 lg:px-6 py-20">
+<div class="max-w-xl mx-auto text-center mb-8">
+      <h2 id="uid-b6f5e8ac" data-component="text" class="text-accent font-accent text-5xl md:text-7xl font-medium" data-animation="fadeInUp">Love Story</h2>
+    </div>
+
+<div class="flex flex-wrap justify-center gap-8">
+
+<div data-animation="fadeInUp" class="p-6 w-full max-w-md border" style="border-color:var(--border-color);">
+<h2 data-component="header" class="font-bold" id="uid-a1f22750" data-animation="fadeInLeft">Pertemuan</h2>
+<p data-component="description" class="text-base mt-2" id="uid-a0fc28a4" data-animation="fadeInLeft">Pertemuan pertama kami terjadi di akhir tahun 2024 saat saya menemani keluarga dalam perjalanan ibadah umrah di Arab Saudi. Momen tersebut membawa kami yang telah tertulis di Lauhul Mahfudz dimana saling mengenal lebih dekat dan membuka jalan  hubungan yang lebih serius.</p>
+</div>
+
+<div data-animation="fadeInUp" class="p-6 w-full max-w-md border" style="border-color:var(--border-color);">
+<h2 data-component="header" class="font-bold" id="uid-aabca0f8" data-animation="fadeInLeft">Pendekatan</h2>
+<p data-component="description" class="text-base mt-2" data-animation="fadeInLeft" id="uid-d6f3f11f">Katanya cinta dapat tumbuh dengan kebersamaan , seiring berjalannya waktu kami kembali bertemu di kota Mekkah , memang tidak ada kata pacaran diantara kami tapi alam seakan terus berkonspirasi untuk menyatukan kami berdua.</p>
+</div>
+
+<div data-animation="fadeInUp" class="p-6 w-full max-w-md border" style="border-color:var(--border-color);">
+<h2 data-component="header" class="font-bold" id="uid-68a25340" data-animation="fadeInLeft">Lamaran</h2>
+<p data-component="description" class="text-base mt-2" data-animation="fadeInLeft" id="uid-037da70b">Pada awal April 2025, dia dengan penuh keberanian menyampaikan niatnya untuk melamar saya kepada orang tua. Langkah ini menjadi awal dari perjalanan kami menuju kehidupan berumah tangga yang insyaallah Samawa bersama menuju surga Allah S.W.T.</p>
+</div>
+
+<div data-animation="fadeInUp" class="p-6 w-full max-w-md border" style="border-color:var(--border-color);">
+<h2 data-component="header" class="font-bold" data-animation="fadeInLeft" id="uid-c9a0b99a">Menikah</h2>
+<p data-component="description" class="text-base mt-2" data-animation="fadeInLeft" id="uid-9a14bb17">Dengan keridhaan Allah SWT, setelah melewati perjalanan selama enam bulan yang penuh dengan doa dan persiapan, kami memutuskan untuk melangsungkan pernikahan pada akhir Juni 2025. Semoga kehidupan yang kami bangun bersama senantiasa diberkahi dan dilimpahi kebahagiaan.</p>
+</div>
+
+</div> 
+
+  </section>
+
+
+      </div>
+    </div>
+    
+    <!-- Page 5: RSVP -->
+    <div id="page-5" class="w-full">
+      <div class="relative overflow-hidden">
+        <section class="w-full py-20 px-4" style="background-color:var(--header-color);color:var(--background-color);">
+  <div class="max-w-xl mx-auto text-center">
+
+<div data-component="image" class="h-24 w-full mx-auto" data-animation="none" id="uid-9cc4b96a"><img src="assets/images/Z2CkfqVpZns7bVva8IDlCFsTSLwdqudv71oTtRu6.webp" class="size-full object-contain" alt="xUXSnhxAED90iuoRHD5lgTlNEP7RHesGcqoB7YQr.webp"></div>
+
+    <div>
+      <h2 data-component="header" class="font-header text-5xl md:text-7xl font-medium" data-animation="fadeInUp" id="uid-50cfe717">
+        Please RSVP
+      </h2>
+<p data-component="description" class="font-medium mb-8" data-animation="fadeInUp" id="uid-ebb717bd">
+        With our coordinators by January 5
+      </p>
+    </div>
+
+    <div id="rsvp-form" class="p-4 sm:p-6" style="background-color:var(--background-color);color:var(--body-color);">
+        <div class="mx-auto max-w-md py-4 text-left">
+          <form id="form-rsvp" class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium mb-1" style="color:var(--body-color);">Nama Lengkap</label>
+              <input type="text" id="rsvp-name" required placeholder="Nama Anda" class="w-full h-11 px-3.5 rounded-lg border border-gray-300 bg-white text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--button-bg)]">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1" style="color:var(--body-color);">Konfirmasi Kehadiran</label>
+              <div class="grid grid-cols-3 gap-2">
+                <label class="flex items-center justify-center p-2.5 rounded-lg border border-gray-300 cursor-pointer hover:bg-gray-50 text-xs sm:text-sm font-medium text-center has-[:checked]:bg-[var(--button-bg)] has-[:checked]:text-white has-[:checked]:border-[var(--button-bg)] transition-colors">
+                  <input type="radio" name="rsvp-attendance" value="Hadir" checked class="hidden">
+                  Hadir
+                </label>
+                <label class="flex items-center justify-center p-2.5 rounded-lg border border-gray-300 cursor-pointer hover:bg-gray-50 text-xs sm:text-sm font-medium text-center has-[:checked]:bg-[var(--button-bg)] has-[:checked]:text-white has-[:checked]:border-[var(--button-bg)] transition-colors">
+                  <input type="radio" name="rsvp-attendance" value="Tidak Hadir" class="hidden">
+                  Tidak Hadir
+                </label>
+                <label class="flex items-center justify-center p-2.5 rounded-lg border border-gray-300 cursor-pointer hover:bg-gray-50 text-xs sm:text-sm font-medium text-center has-[:checked]:bg-[var(--button-bg)] has-[:checked]:text-white has-[:checked]:border-[var(--button-bg)] transition-colors">
+                  <input type="radio" name="rsvp-attendance" value="Ragu-ragu" class="hidden">
+                  Masih Ragu
+                </label>
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1" style="color:var(--body-color);">Jumlah Tamu</label>
+              <select id="rsvp-guests" class="w-full h-11 px-3.5 rounded-lg border border-gray-300 bg-white text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--button-bg)]">
+                <option value="1 Orang">1 Orang</option>
+                <option value="2 Orang">2 Orang</option>
+                <option value="3 Orang">3 Orang</option>
+                <option value="4 Orang">4 Orang</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1" style="color:var(--body-color);">Ucapan / Pesan Singkat</label>
+              <textarea id="rsvp-message" rows="3" placeholder="Tuliskan ucapan atau doa restu..." class="w-full p-3.5 rounded-lg border border-gray-300 bg-white text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--button-bg)]"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-full h-11 rounded-lg text-sm font-medium transition-all shadow-md">
+              Kirim Konfirmasi RSVP
+            </button>
+          </form>
+          <div id="rsvp-success" class="hidden mt-4 p-4 rounded-lg bg-green-50 border border-green-200 text-green-800 text-center text-sm">
+            <span class="font-bold">✓ Terima kasih!</span> Konfirmasi kehadiran Anda telah tersimpan.
+          </div>
+        </div>
+        </div>
+  </div>
+</section>
+      </div>
+    </div>
+    
+    <!-- Page 6: Gift -->
+    <div id="page-6" class="w-full">
+      <div class="relative overflow-hidden">
+        <section class="px-4 lg:px-6 py-20 text-center space-y-8 lg:flex items-center" style="background-color:#ffffff;">
+
+<div class="relative mb-6 pb-6 pt-20 px-4 lg:px-6 max-w-lg mx-auto" style="background-color:var(--background-color);color:var(--body-color);border-radius:20rem 20rem 0 0;">
+      <h2 data-component="header" class="font-header text-5xl md:text-7xl font-medium mb-6" data-animation="fadeInUp" id="uid-04aedd15">GIFTS</h2>
+<p data-component="description" id="uid-52906e55" data-animation="fadeInUp">Terima kasih telah mengisi kebahagiaan dan kegembiraan di pernikahan kami dengan kehadiran dan hadiah indah Anda.</p>
+
+<div class="flex flex-col items-center mt-4">
+
+<div class="space-y-4">
+
+<div class="flex items-center">
+<div data-component="image" class="h-16 w-24 overflow-hidden rounded-lg" id="uid-e9615a74" data-animation="none">
+<img src="assets/images/yOXbQgrh7fbsyYE9qziYVNOzSublplKac72GxkB8.png" class="h-full w-full object-cover" alt="logo-bri-1688609239.jpg">
+</div>
+<div class="text-left pl-4">
+<h3 data-component="text" class="font-bold" id="uid-d159b008" data-animation="none">6870693280</h3>
+<p data-component="text" id="uid-c5db1427" data-animation="none">A/N Mempelai Pria</p>
+        <div class="mt-2">
+          <button type="button" onclick="copyToClipboard('6870693280', 'Nomor Rekening Mempelai Pria')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border border-[var(--button-bg)] text-[var(--button-bg)] hover:bg-[var(--button-bg)] hover:text-white transition-colors cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+            Salin Nomor Rekening
+          </button>
+        </div>
+        
+</div>
+</div>
+
+<div class="flex items-center">
+<div data-component="image" class="h-16 w-24 overflow-hidden rounded-lg" id="uid-2c4ebc7f" data-animation="none">
+<img src="assets/images/yOXbQgrh7fbsyYE9qziYVNOzSublplKac72GxkB8.png" class="h-full w-full object-cover" alt="logo-bri-1688609239.jpg">
+</div>
+<div class="text-left pl-4">
+<h3 data-component="text" class="font-bold" data-animation="none" id="uid-3781bae0">3800971038</h3>
+<p data-component="text" data-animation="none" id="uid-cf8747b1">A/N Mempelai Wanita</p>
+        <div class="mt-2">
+          <button type="button" onclick="copyToClipboard('3800971038', 'Nomor Rekening Mempelai Wanita')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border border-[var(--button-bg)] text-[var(--button-bg)] hover:bg-[var(--button-bg)] hover:text-white transition-colors cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+            Salin Nomor Rekening
+          </button>
+        </div>
+        
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div data-component="link" id="uid-884afd06" data-animation="zoomIn" class="mt-10">
+<a class="btn btn-primary inline-flex h-10 w-full px-20" href="https://wa.me/62812xxxxxx" target="_blank" rel="noreferrer noopener">Confirm Transfer</a>
+</div>
+
+    </div>
+</section>
+      </div>
+    </div>
+    
+    <!-- Page 7: Comment -->
+    <div id="page-7" class="w-full">
+      <div class="relative overflow-hidden">
+        <section class="w-full py-20 px-4">
+  <div class="max-w-4xl mx-auto sm:px-4 text-center space-y-8">
+    <div>
+      <h2 data-component="header" class="text-header font-header text-5xl md:text-7xl font-medium mb-6" data-animation="fadeInUp" id="uid-889e9bb7">
+        COMMENT
+      </h2>
+    </div>
+
+    <div id="comment-form" class="p-4 sm:p-6 max-w-xl mx-auto rounded-2xl shadow-sm" style="background-color:rgba(0, 0, 0, .06);">
+        <div class="mx-auto max-w-md py-4 text-left">
+          <form id="form-comment" class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium mb-1">Nama</label>
+              <input type="text" id="comment-name" required placeholder="Nama Anda" class="flex h-10 w-full rounded-md border border-input bg-white px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-[var(--button-bg)]">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1">E-Mail (Opsional)</label>
+              <input type="email" id="comment-email" placeholder="email@domain.com" class="flex h-10 w-full rounded-md border border-input bg-white px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-[var(--button-bg)]">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1">Ucapan & Doa Restu</label>
+              <textarea id="comment-content" required rows="3" placeholder="Tuliskan ucapan atau doa untuk kedua mempelai..." class="flex w-full rounded-md border border-input bg-white px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-[var(--button-bg)]"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-full h-10 rounded-md text-sm font-medium transition-colors flex items-center justify-center gap-2">
+              <span>Kirim Ucapan</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </button>
+          </form>
+          
+          <div class="mt-8">
+            <h4 class="text-sm font-bold uppercase tracking-wider mb-4 opacity-70">Ucapan & Doa Restu</h4>
+            <div id="comments-list" class="grid max-h-[480px] gap-3 overflow-y-auto pr-1"></div>
+          </div>
+        </div>
+        </div>
+  </div>
+</section>
+      </div>
+    </div>
+    
+    <!-- Page 8: Gallery -->
+    <div id="page-8" class="w-full">
+      <div class="relative overflow-hidden">
+        <section id="uid-db42b8b3" class="px-6 py-20">
+<div class="text-center mb-8">
+      <h2 id="uid-a769b11c" data-component="text" class="text-header font-header text-4xl md:text-5xl font-medium" data-animation="fadeInUp">OUR MOMENT</h2>
+      <p data-component="description" class="text-base mt-2" id="uid-284533d0" data-animation="typing">Aku diciptakan tepat pada waktunya untuk mengisi waktumu, dan aku menggunakan seluruh waktuku dalam hidup ini untuk mencintaimu.</p>
+    </div>
+  <div class="grid gap-2">
+    
+    <div id="uid-8339899c" class="w-full overflow-hidden" data-component="image" style="height:280px;" data-animation="zoomIn">
+      <img onclick="openLightbox(this.src)" class="cursor-pointer hover:scale-105 transition-transform duration-300 src="assets/images/KXFSGKPb3XhNj5Ogv3knLFpAKC9Zkg7fSSVrgtqr.png" alt="Foto 1" class="w-full h-full object-cover object-center">
+    </div>
+
+    
+    <div class="grid gap-2" style="grid-template-columns:repeat(3, 1fr);">
+      <div id="uid-f625e9f3" class="overflow-hidden" data-component="image" style="grid-column:span 1 / span 1;height:200px;" data-animation="zoomIn">
+        <img onclick="openLightbox(this.src)" class="cursor-pointer hover:scale-105 transition-transform duration-300 src="assets/images/3e26pzYYCSbCG81vGGzqj2UuWQyOoZoiTHfr5kFV.png" alt="Foto 2" class="w-full h-full object-cover object-center">
+      </div>
+      <div id="uid-731fb794" class="overflow-hidden" data-component="image" style="grid-column:span 2 / span 2;height:200px;" data-animation="zoomIn">
+        <img onclick="openLightbox(this.src)" class="cursor-pointer hover:scale-105 transition-transform duration-300 src="assets/images/OMUzuqHgvmuC5SKiqzcn1QRyHHluU7WHeE6DbFSU.png" alt="Foto 3" class="w-full h-full object-cover object-center">
+      </div>
+    </div>
+
+    
+    <div class="grid gap-2" style="grid-template-columns:repeat(3, 1fr);">
+      <div id="uid-59174c9c" class="overflow-hidden" data-component="image" style="grid-column:span 2 / span 2;height:200px;" data-animation="zoomIn">
+        <img onclick="openLightbox(this.src)" class="cursor-pointer hover:scale-105 transition-transform duration-300 src="assets/images/KMSyd46DBafMjlJVi2hRX2YrEFvOJ9JzhWLYh8ys.png" alt="Foto 4" class="w-full h-full object-cover object-center">
+      </div>
+      <div id="uid-4ed5a863" class="overflow-hidden" data-component="image" style="grid-column:span 1 / span 1;height:200px;" data-animation="zoomIn">
+        <img onclick="openLightbox(this.src)" class="cursor-pointer hover:scale-105 transition-transform duration-300 src="assets/images/JGNIQG1oHDINqEF3ksHMSnOHSEo1X7l1Oox1jaGl.png" alt="Foto 5" class="w-full h-full object-cover object-center">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+      </div>
+    </div>
+    
+    <!-- Page 9: Thanks -->
+    <div id="page-9" class="w-full">
+      <div class="relative overflow-hidden">
+        <section id="uid-a0862e18" class="px-6 py-20" style="background-color:var(--header-color);color:var(--background-color);">
+
+<div class="text-center mb-8 max-w-xl mx-auto">
+      <h2 id="uid-a0fd48f0" data-component="text" class="font-accent text-5xl md:text-7xl font-medium" data-animation="fadeInUp">Thank You</h2>
+      <p data-component="description" class="text-base mt-2" id="uid-3aa5cf34" data-animation="fadeInUp">Thank you for your presence, prayers, and love. May Allah SWT always bestow His grace, peace, and blessings upon us all.</p>
+    </div>
+
+
+<div class="text-center mb-8 max-w-xl mx-auto">
+
+<div class="space-y-4">
+
+<div class="text-base p-4" id="uid-6402d01e">
+<div data-component="text" class="font-header font-bold text-3xl" id="uid-39170192" data-animation="none">Also Invited</div>
+</div>
+
+<div class="text-base p-4" id="uid-c753d2a1" style="border:1px solid var(--background-color);">
+<div data-component="text" class="font-header font-bold text-2xl" id="uid-7cf9ad59" data-animation="none">Abu Bakar Halid &amp; Istri</div>
+<div data-component="text" id="uid-1af06c2a" data-animation="none">Founder Vitopia.co</div>
+</div>
+
+<div class="text-base p-4" id="uid-214f3f6c" style="border:1px solid var(--background-color);">
+<div data-component="text" class="font-header font-bold text-2xl" id="uid-edab4908" data-animation="none">Ahmad Renaldi &amp; Istri</div>
+<div data-component="text" id="uid-350718b9" data-animation="none">Co Founder Vitopia.co</div>
+</div>
+
+<div class="w-48 h-64 lg:w-80 lg:h-80 mx-auto wave" style="transform-origin:bottom center;" data-component="image" data-animation="none" id="uid-85fc9a81">
+<img src="assets/images/iVuAwudfRwZpkkOHfkAyVVIScf6X3qHTlYrn4Nqa.png" class="size-full object-contain" alt="sKfFKgyvyK1rQkwuqad3lkdklbZCwfU4uMLcdU0h.webp">
+</div>
+
+</div></div></section>
+      </div>
+    </div>
+    
+
+    <!-- Footer Branding -->
+    <div class="grid gap-4 border-t border-black/10 bg-black/5 p-8 text-center text-xs text-gray-500">
+      <div class="space-y-1">
+        <p class="font-medium text-gray-700">Digital Wedding Invitation</p>
+        <p>Green Burgundy Theme &bull; Nuansa Islami</p>
+        <p class="text-[11px] opacity-75">Backsound: Elliot James Reay - I Think They Call This Love</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fullscreen Lightbox Modal -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/85 backdrop-blur-md p-4 cursor-pointer" onclick="closeLightbox()">
+    <button class="absolute top-4 right-4 text-white p-2.5 rounded-full bg-black/50 hover:bg-black/80 transition-colors" aria-label="Tutup preview">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+    <img id="lightbox-img" src="" alt="Preview" class="max-h-[90vh] max-w-[90vw] object-contain rounded-xl shadow-2xl transition-transform duration-300">
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-gray-900 text-white text-sm px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2.5">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+    <span id="toast-message">Pemberitahuan</span>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
